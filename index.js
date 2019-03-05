@@ -37,7 +37,7 @@ app.post('/cadastrar', (req, res) => {
         if (!err) {
             console.log('usuario cadastrado com sucesso!');
             
-            res.json({sucesso:'Funcionario cadastrado com sucesso!', data: user, token: token})
+            res.json({sucesso:'Funcionario cadastrado com sucesso!', data: user})
         }else {
             console.log(err);
             res.json({erro:'Erro ao cadastrar funcionario', erro: err})
@@ -58,14 +58,9 @@ app.post('/login', (req, res) => {
                 if (row.email == user.email && row.senha == user.senha) {
                     jwt.sign({ user: user }, 'secretkey', (e, token) => {
                         if (!e) {
-                            res.json({
-                                data: user,
-                                token: token
-                            });
+                            res.json({ data: user, token: token });
                         } else {
-                            res.json({
-                                erro: e
-                            });
+                            res.json({ erro: e });
                         }
                     })
                 } else {
