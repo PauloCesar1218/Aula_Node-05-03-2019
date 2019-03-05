@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    width: 400px;
+    position: relative;
+    top: 30%;
+    left: 33%;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.container {
+    margin-bottom: 50px;
+}
